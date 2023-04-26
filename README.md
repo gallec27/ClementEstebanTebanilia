@@ -7,7 +7,7 @@ Se utiliza la familia **Aleo**
 https://fonts.google.com/specimen/Aleo
 
 
-![Fonts](/assets/Fonts.png.png)
+![Fonts](/assets/Fonts.png)
 
 
 ## Paleta de colores
