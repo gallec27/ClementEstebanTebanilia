@@ -17,6 +17,6 @@ https://coolors.co/palette/8cb369-f4e285-f4a259-5b8e7d-bc4b51
 
 
 ## Logo
-![Logo](/assets/logo.jpg)
+![Logo](/assets/logo.png)
 
 
