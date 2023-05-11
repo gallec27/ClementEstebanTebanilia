@@ -19,4 +19,7 @@ https://coolors.co/palette/8cb369-f4e285-f4a259-5b8e7d-bc4b51
 ## Logo
 ![Logo](/assets/logo.png)
 
+## Boceto en Figma
+https://www.figma.com/file/0lcQqlzqteZX15lK3M1lwg/Boceto-ecommerce-Tebanilia?type=design&node-id=0%3A1&t=8sbY14dNrPa4oTYx-1
+
 
