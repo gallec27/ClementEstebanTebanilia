@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root,
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Aleo;
+}
+
+li {
+  list-style: none;
+}
+
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  background-color: #bc4b51;
+  width: 100vw;
+}
+
+.main1 {
+  background-color: #5b8e7d;
+}
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navBar_links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  background-color: #8cb369;
+  width: 100vw;
+  height: 120px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 5px;
+}
+
+.producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
