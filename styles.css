@@ -65,24 +65,30 @@ li {
 }
 
 .imgProducto{
-  width: 400px;
+  width: 250px;
   border-radius: 5%;
 }
 
 .btnContainer{
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 5px;
 }
 
-.btnCarrito{
-  background-color: #F4A259;
+.btnCarrito{  
+  background-color: #F4A259;  
   border-radius: 7px;
-  padding: 3px;
-  font-size: 16px;
+  padding-left: 20px; 
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .btnVermas{
   background-color: #F4E285;
   border-radius: 7px;
   padding: 3px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
 }
