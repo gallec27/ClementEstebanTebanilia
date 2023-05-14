@@ -51,11 +51,38 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .producto {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2px;
+}
+
+.imgProducto{
+  width: 400px;
+  border-radius: 5%;
+}
+
+.btnContainer{
+  margin-top: 5px;
+}
+
+.btnCarrito{
+  background-color: #F4A259;
+  border-radius: 7px;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.btnVermas{
+  background-color: #F4E285;
+  border-radius: 7px;
+  padding: 3px;
+  font-size: 16px;
 }
