@@ -5,105 +5,194 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tebanilia - Home</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layouts.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body>
     <header class="header1">
-      <img src="/assets/logo1.png" alt="logo_tebanilia" />
+      <div class="navBar">
+        <img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/>
+        <h1 class="header1__titulo">tebanilia</h3>
+      </div>
       <nav class="navBar">
-        <ul class="navBar_links">
-          <li>Inicio</li>
-          <li>Productos</li>
-          <li>Compra</li>
+        <ul class="navBar__links">
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Compra</a></li>
         </ul>
       </nav>
     </header>
     <main class="main1">
       <div class="banner">
-        <img src="/assets/banner.png" alt="imágen banner olivo,aceitunas y aceite">
+        <img
+          src="/assets/oliva_olivo.png"
+          alt="imágen planta olivo" class="img__banner"
+        />
+        <img
+          src="/assets/oliva_cosecha.png"
+          alt="imágen cosecha aceitunas" class="img__banner"
+        />
+        <img
+          src="/assets/oliva_oliva.png"
+          alt="imágen aceite de oliva" class="img__banner"
+        />
+        <img
+          src="/assets/miel_abeja.png"
+          alt="imágen abeja sobre flor" class="img__banner"
+        />
+        <img
+          src="/assets/miel_miel.png" class="img__banner"
+          alt="imágen miel"
+        />
+        <img
+          src="/assets/vino_vid.png" class="img__banner"
+          alt="imágen viñedo"
+        />
+        <img
+          src="/assets/vino_barricas.png"
+          alt="imágen barricas de madera" class="img__banner"
+        />
+        <img
+          src="/assets/vino_copas.png"
+          alt="imágen copas con vino" class="img__banner"
+        />
       </div>
       <section class="productos">
-        <article class="producto">
-          <img src="/assets/saborMedio.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/saborMedio.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Blend Sabor Medio</h2>
           <h6>Bivarietal Arbequina Picual</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="producto">
-          <img src="/assets/saborIntenso.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/saborIntenso.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Blend Sabor Intenso</h2>
           <h6>Bivarietal Arbequina Coratina</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="producto">
-          <img src="/assets/apuliaBlanca.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/apuliaBlanca.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Apulia</h2>
           <h6>Arauco Coratina Picual</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
-          </div>          
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
+          </div>
         </article>
-        <article class="producto">
-          <img src="/assets/aceto.png" alt="aceto balsámico" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/aceto.png"
+            alt="aceto balsámico"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Aceto Balsámico</h2>
           <h6>Aceto Balsámico</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
       </section>
       <section class="productos">
-        <article class="producto">
-          <img src="/assets/aceto.png" alt="aceto balsámico" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/aceto.png"
+            alt="aceto balsámico"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Aceto Balsámico</h2>
           <h6>Aceto Balsámico</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="producto">
-          <img src="/assets/saborIntenso.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/saborIntenso.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Blend Sabor Intenso</h2>
           <h6>Bivarietal Arbequina Coratina</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="producto">
-          <img src="/assets/apuliaBlanca.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/apuliaBlanca.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Apulia</h2>
           <h6>Arauco Coratina Picual</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="producto">
-          <img src="/assets/apuliaBlanca.png" alt="aceite oliva extra virgen" class="imgProducto">
+        <article class="productos__producto">
+          <img
+            src="/assets/apuliaBlanca.png"
+            alt="aceite oliva extra virgen"
+            class="img__producto"
+            loading="lazy"
+          />
           <h2>Apulia</h2>
           <h6>Arauco Coratina Picual</h6>
-          <div class="btnContainer">
-            <button class="btnCarrito"><img src="/assets/icon_cart.png" alt="carrito"></button>
-            <button class="btnVermas">Detalles</button>
+          <div class="btn__container">
+            <button class="btn__carrito">
+              <img src="/assets/icon_cart.png" alt="carrito" />
+            </button>
+            <button class="btn__vermas">Detalles</button>
           </div>
         </article>
       </section>
       <section class="novedades">
-        <article>
-
-        </article>
+        <article></article>
       </section>
-
     </main>
     <footer></footer>
   </body>
