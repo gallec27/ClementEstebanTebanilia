@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/layouts.css" />
     <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/cards.css" />
   </head>
   <body>
     <header class="header1">
-      <div class="navBar">
+      <div class="header_logo">
         <img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/>
         <h1 class="header1__titulo">tebanilia</h3>
       </div>
@@ -27,47 +28,46 @@
       <div class="banner">
         <img
           src="/assets/oliva_olivo.png"
-          alt="imágen planta olivo" class="img__banner"
+          alt="imágen planta olivo" class="img__banner img__banner1l"
         />
         <img
           src="/assets/oliva_cosecha.png"
-          alt="imágen cosecha aceitunas" class="img__banner"
+          alt="imágen cosecha aceitunas" class="img__banner img__banner2l"
         />
         <img
           src="/assets/oliva_oliva.png"
-          alt="imágen aceite de oliva" class="img__banner"
+          alt="imágen aceite de oliva" class="img__banner img__banner3l"
         />
         <img
           src="/assets/miel_abeja.png"
-          alt="imágen abeja sobre flor" class="img__banner"
+          alt="imágen abeja sobre flor" class="img__banner img__banner4l"
         />
         <img
-          src="/assets/miel_miel.png" class="img__banner"
+          src="/assets/miel_miel.png" class="img__banner img__banner4r"
           alt="imágen miel"
         />
         <img
-          src="/assets/vino_vid.png" class="img__banner"
+          src="/assets/vino_vid.png" class="img__banner img__banner3r"
           alt="imágen viñedo"
         />
         <img
           src="/assets/vino_barricas.png"
-          alt="imágen barricas de madera" class="img__banner"
+          alt="imágen barricas de madera" class="img__banner img__banner2r"
         />
         <img
           src="/assets/vino_copas.png"
-          alt="imágen copas con vino" class="img__banner"
+          alt="imágen copas con vino" class="img__banner img__banner1r"
         />
       </div>
       <section class="productos">
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/saborMedio.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Blend Sabor Medio</h2>
-          <h6>Bivarietal Arbequina Picual</h6>
+          <h2 class="card__titulo">Blend Sabor Medio</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -75,15 +75,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/saborIntenso.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Blend Sabor Intenso</h2>
-          <h6>Bivarietal Arbequina Coratina</h6>
+          <h2 class="card__titulo">Blend Sabor Intenso</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -91,15 +90,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/apuliaBlanca.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Apulia</h2>
-          <h6>Arauco Coratina Picual</h6>
+          <h2 class="card__titulo">Apulia</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -107,15 +105,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/aceto.png"
             alt="aceto balsámico"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Aceto Balsámico</h2>
-          <h6>Aceto Balsámico</h6>
+          <h2 class="card__titulo">Aceto Balsámico</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -125,15 +122,14 @@
         </article>
       </section>
       <section class="productos">
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/aceto.png"
             alt="aceto balsámico"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Aceto Balsámico</h2>
-          <h6>Aceto Balsámico</h6>
+          <h2 class="card__titulo">Aceto Balsámico</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -141,15 +137,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/saborIntenso.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Blend Sabor Intenso</h2>
-          <h6>Bivarietal Arbequina Coratina</h6>
+          <h2 class="card__titulo">Blend Sabor Intenso</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -157,15 +152,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/apuliaBlanca.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Apulia</h2>
-          <h6>Arauco Coratina Picual</h6>
+          <h2 class="card__titulo">Apulia</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
@@ -173,15 +167,14 @@
             <button class="btn__vermas">Detalles</button>
           </div>
         </article>
-        <article class="productos__producto">
+        <article class="card">
           <img
             src="/assets/apuliaBlanca.png"
             alt="aceite oliva extra virgen"
             class="img__producto"
             loading="lazy"
           />
-          <h2>Apulia</h2>
-          <h6>Arauco Coratina Picual</h6>
+          <h2 class="card__titulo">Apulia</h2>          
           <div class="btn__container">
             <button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
