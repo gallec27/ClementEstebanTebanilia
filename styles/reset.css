@@ -12,7 +12,8 @@ ul, ol,
 figure,
 blockquote,
 dl,
-dd {
+dd,
+footer {
   margin: 0;
   padding: 0;
 }

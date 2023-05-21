@@ -7,6 +7,10 @@
   font-family: Aleo;
 }
 
+body{
+  min-width: 290px;
+}
+
 @font-face {
   font-family: "selima";
   src: url("/fonts/Selima\ .ttf");
@@ -24,7 +28,7 @@ li {
   height: auto;
 }
 
-.header_logo{
+.header__logo{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +58,7 @@ li {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -75,34 +79,45 @@ li {
   width: 3rem;
 }
 
-.img__banner {
-  border-radius: 10%;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-right-width: 1px;
-  border-right-style: solid;
-  border-left-width: 1px;
-  border-left-style: solid;
-  margin-right: 1px;
-  margin-left: 1px;
+.footer1 {
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  background-color: #bc4b51;
+  height: auto;
+}
+
+.footer__logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer__titulo {
+  font-family: "selima";
+  font-size: 1.5rem;
+  color: #d1ffcce3;
+  padding: 0;
+}
+
+.footer__copyright{
+  font-size: 0.6rem;
 }
 
 /* Cuando pasa a desktop */
 @media (min-width: 600px) {
   .header1 {
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #bc4b51;
-    height: auto;
+    flex-direction: row;   
   }
 
   .header1__titulo{
     padding: 1rem;
   }
 
-  .header_logo{
+  .header__logo{
     flex-direction: row;  
   }
 
@@ -115,7 +130,20 @@ li {
     flex-direction: row;
     gap: 2rem;
     align-items: center;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  .footer1{
+    flex-direction: row;
+  }
+
+  .footer__logo{
+    flex-direction: row;
+  }
+
+  .footer__copyright{
+    font-size: 0.8rem;
+    padding-left: 1rem;
   }
 }

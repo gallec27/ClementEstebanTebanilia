@@ -1,0 +1,68 @@
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 5px;
+    padding-right: 5px;
+    /*padding-top: 30px;*/
+    padding-bottom: 30px;
+  }
+  
+  .img__producto {
+    max-width: 65%;
+    border-radius: 5%;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+    0 0  0 2px rgb(255,255,255),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);;
+  }
+  
+  .card__titulo{
+      font-size: 1rem;
+      font-weight: bold;
+      font-style: oblique;
+      padding-top: 5px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc(25% - 20px);
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .btn__container {
+      width: 200px;
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 5px;
+    }
+    
+    .btn__carrito {
+      background-color: #f4a259;
+      border-radius: 7px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    
+    .btn__vermas {
+      background-color: #f4e285;
+      border-radius: 7px;
+      padding: 3px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .card {
+      flex-basis: 100%;
+    }
+  }
