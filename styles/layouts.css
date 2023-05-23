@@ -5,9 +5,17 @@
   padding: 0;
   margin: 0;
   font-family: Aleo;
+  --header-footer-color: #bc4b51;
+  --main-background-color: #5b8e7d;
+  --banner-background-color: #8cb369;
+  --tebanilia-text-color: #d1ffcce3;
+  --btn-cart-color: #f4a259;
+  --btn-detalle-color: #f4e285;
+  --img-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-body{
+body {
   min-width: 290px;
 }
 
@@ -24,11 +32,11 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #bc4b51;
+  background-color: var(--header-footer-color);
   height: auto;
 }
 
-.header__logo{
+.header__logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +48,7 @@ li {
 .header1__titulo {
   font-family: "selima";
   font-size: 2.5rem;
-  color: #d1ffcce3;
+  color: var(--tebanilia-text-color);
   padding: 0;
 }
 
@@ -63,19 +71,19 @@ li {
 }
 
 .main1 {
-  background-color: #5b8e7d;
+  background-color: var(--main-background-color);
 }
 
 .banner {
   display: flex;
   justify-content: space-around;
-  background-color: #8cb369;
+  background-color: var(--banner-background-color);
   height: 120px;
   padding-top: 3px;
   padding-bottom: 3px;
 }
 
-.productos__titulo{
+.productos__titulo {
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -87,13 +95,13 @@ li {
 
 .footer1 {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: space-between;
-  background-color: #bc4b51;
+  background-color: var(--header-footer-color);
   height: auto;
 }
 
-.footer__logo{
+.footer__logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -105,26 +113,26 @@ li {
 .footer__titulo {
   font-family: "selima";
   font-size: 1.5rem;
-  color: #d1ffcce3;
+  color: var(--tebanilia-text-color);
   padding: 0;
 }
 
-.footer__copyright{
+.footer__copyright {
   font-size: 0.6rem;
 }
 
 /* Cuando pasa a desktop */
 @media (min-width: 600px) {
   .header1 {
-    flex-direction: row;   
+    flex-direction: row;
   }
 
-  .header1__titulo{
+  .header1__titulo {
     padding: 1rem;
   }
 
-  .header__logo{
-    flex-direction: row;  
+  .header__logo {
+    flex-direction: row;
   }
 
   .navbar {
@@ -140,15 +148,15 @@ li {
     font-weight: bold;
   }
 
-  .footer1{
+  .footer1 {
     flex-direction: row;
   }
 
-  .footer__logo{
+  .footer__logo {
     flex-direction: row;
   }
 
-  .footer__copyright{
+  .footer__copyright {
     font-size: 0.8rem;
     padding-left: 1rem;
   }

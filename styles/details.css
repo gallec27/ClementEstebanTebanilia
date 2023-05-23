@@ -8,8 +8,7 @@
 .product_detial__img {
   max-width: 65%;
   border-radius: 5%;
-  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  box-shadow: var(--img-box-shadow);
   margin: 1rem;
 }
 
@@ -52,7 +51,7 @@
 }
 
 .btn__carrito {
-  background-color: #f4a259;
+  background-color: var(--btn-cart-color);
   border-radius: 7px;
   padding-left: 20px;
   padding-right: 20px;

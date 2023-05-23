@@ -3,17 +3,14 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-left: 5px;
-    padding-right: 5px;
-    /*padding-top: 30px;*/
+    padding-right: 5px;    
     padding-bottom: 30px;
   }
   
   .img__producto {
     max-width: 65%;
     border-radius: 5%;
-    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
-    0 0  0 2px rgb(255,255,255),
-    0.3em 0.3em 1em rgba(0,0,0,0.3);;
+    box-shadow: var(--img-box-shadow);
   }
   
   .card__titulo{
@@ -39,7 +36,7 @@
     }
     
     .btn__carrito {
-      background-color: #f4a259;
+      background-color: var(--btn-cart-color);
       border-radius: 7px;
       padding-left: 20px;
       padding-right: 20px;
@@ -48,7 +45,7 @@
     }
     
     .btn__vermas {
-      background-color: #f4e285;
+      background-color: var(--btn-detalle-color);
       border-radius: 7px;
       padding: 8px;
       font-size: 14px;
