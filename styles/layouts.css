@@ -75,6 +75,12 @@ li {
   padding-bottom: 3px;
 }
 
+.productos__titulo{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
 .img__logo {
   width: 3rem;
 }
