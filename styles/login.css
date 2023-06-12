@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: var(--login-background-color);
+  padding: 10px;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.form-group__h4 {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group label {
+  font-family: Aleo;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group button {
+  padding: 10px 20px;
+  background-color: #9b4747;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-group button:hover {
+  background-color: #9e5d5d;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.name {
+  text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+  /*.column{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .form-group {
+        flex-basis: 80%;
+    }*/
+}

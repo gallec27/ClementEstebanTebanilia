@@ -8,6 +8,7 @@
   --header-footer-color: #bc4b51;
   --main-background-color: #5b8e7d;
   --banner-background-color: #8cb369;
+  --login-background-color: #ffb9b991;
   --tebanilia-text-color: #d1ffcce3;
   --btn-cart-color: #f4a259;
   --btn-detalle-color: #f4e285;
@@ -22,6 +23,10 @@ body {
 @font-face {
   font-family: "selima";
   src: url("/fonts/Selima\ .ttf");
+}
+
+a :visited{
+  color: black;
 }
 
 li {
