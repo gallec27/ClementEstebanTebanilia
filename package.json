@@ -1,0 +1,19 @@
+{
+ 
+  "name": "clementestebantebanilia",
+  "description": "Es un ecommerce dónde se ofrecen distintos productos derivados del Olivo. El fruto en sus distintas variedades, aceites extra virgen de las distintas variedades cómo así también blend y otros productos que son enteramente orgánicos.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
