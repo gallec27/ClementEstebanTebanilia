@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tebanilia - Ingresar</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layouts.css" />
+    <link rel="stylesheet" href="/styles/login.css" />
+  </head>
+  <body>
+    <header class="header1">
+      <div class="header__logo">
+        <a href="/"
+          ><img
+            src="/assets/logo_st.png"
+            alt="logo_tebanilia"
+            class="img__logo"
+        /></a>
+        <h1 class="header1__titulo">tebanilia</h1>
+      </div>
+      <nav class="navBar">
+        <ul class="navBar__links">
+          <li><a href="/">Inicio</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main1">
+      <section class="container">
+        <form method="post" action="/user/login" class="registro">
+          <div class="form-group">
+            <label for="email">Correo</label>
+            <input name="email" id="email" type="email" />
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input name="password" id="password" type="password" />
+          </div>
+          <div class="form-group">
+            <button type="submit">Enviar</button>
+          </div>
+          <div class="form-group__h4">
+            <a href="/user/register"><h4>Registrarse</h4></a>
+          </div>
+          <div class="form-group__error">
+            <!-- Renderiza los mensajes de error si existen -->
+            <% if (errors && errors.length > 0) { %>
+              <ul>
+                <% errors.forEach((error) => { %>
+                <li><%= error.msg %></li>
+                <% }); %>
+              </ul>
+            </div>
+            <% } %>
+        </form>
+      </section>
+    </main>
+    <footer class="footer1">
+      <div class="footer__logo">
+        <a href="/"
+          ><img
+            src="/assets/logo_st.png"
+            alt="logo_tebanilia"
+            class="img__logo"
+        /></a>
+        <h3 class="footer__titulo">tebanilia</h3>
+        <p class="footer__copyright">Copyrigth 2023</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -13,7 +13,7 @@
   <body>
     <header class="header1">
       <div class="header__logo">
-        <a href="/index.html"
+        <a href="/"
           ><img
             src="/assets/logo_st.png"
             alt="logo_tebanilia"
@@ -23,8 +23,10 @@
       </div>
       <nav class="navBar">
         <ul class="navBar__links">
-          <li><a href="/index.html">Inicio</a></li>          
-          <li><a href="/login.html">Ingresar</a></li>
+          <% if (req.session.usuario) { %>            
+            <li>Hola, <%= req.session.usuario.nombre %>!</li>
+            <li><a href="/user/logout">Cerrar sesión</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>
@@ -32,7 +34,7 @@
       <div><h2 class="productos__titulo">Carro de compras</h2></div>
       <section class="productos">
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/saborMedio.png"
@@ -44,7 +46,7 @@
           <p class="product_detail__subt">Precio: $3800</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/saborIntenso.png"
@@ -56,7 +58,7 @@
           <p class="product_detail__subt">Precio: $10800</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/apuliaBlanca.png"
@@ -68,7 +70,7 @@
           <p class="product_detail__subt">Precio: $800</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/aceto.png"
@@ -82,7 +84,7 @@
       </section>
       <section class="productos">
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/aceto.png"
@@ -94,7 +96,7 @@
           <p class="product_detail__subt">Precio: $7800</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/saborIntenso.png"
@@ -106,7 +108,7 @@
           <p class="product_detail__subt">Precio: $1400</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/apuliaBlanca.png"
@@ -118,7 +120,7 @@
           <p class="product_detail__subt">Precio: $7800</p>
         </article>
         <article class="card">
-          <a class="img__producto_size" href="/detalle.html"
+          <a class="img__producto_size" href="/products/details"
             ><img
               class="img__producto_border"
               src="/assets/apuliaBlanca.png"
@@ -133,7 +135,7 @@
     </main>
     <footer class="footer1">
       <div class="footer__logo">
-        <a href="/index.html"
+        <a href="/"
           ><img
             src="/assets/logo_st.png"
             alt="logo_tebanilia"

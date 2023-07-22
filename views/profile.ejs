@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tebanilia - Administración</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/layouts.css" />    
+    <link rel="stylesheet" href="/styles/cards.css" />
+    <link rel="stylesheet" href="/styles/login.css" />    
+  </head>
+  <body>
+    <header class="header1">
+      <div class="header__logo">
+        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <h1 class="header1__titulo">tebanilia</h1>
+      </div>
+      <nav class="navBar">
+        <ul class="navBar__links">          
+          <% if (req.session.usuario) { %>            
+            <li>Hola, <%= req.session.usuario.nombre %>!</li>
+            <li><a href="/user/logout">Cerrar sesión</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+    <main class="main1">      
+      <div><h2 class="productos__titulo">Administración de productos</h2></div>
+      <section class="container">
+        <ul>
+          <li><a href="/products/list">Lista de Productos</a></li>
+          <li><a href="/products/create">Crear producto</a></li>         
+        </ul>    
+      </section>      
+    </main>
+    <footer class="footer1">
+      <div class="footer__logo">
+        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <h3 class="footer__titulo">tebanilia</h3>
+        <p class="footer__copyright">Copyrigth 2023</p>
+      </div>      
+    </footer>
+  </body>
+</html>

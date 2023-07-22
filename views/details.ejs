@@ -12,7 +12,7 @@
   <body>
     <header class="header1">
       <div class="header__logo">
-        <a href="/index.html"
+        <a href="/"
           ><img
             src="/assets/logo_st.png"
             alt="logo_tebanilia"
@@ -22,8 +22,10 @@
       </div>
       <nav class="navBar">
         <ul class="navBar__links">
-          <li><a href="/index.html">Inicio</a></li>          
-          <li><a href="/login.html">Ingresar</a></li>
+          <% if (req.session.usuario) { %>            
+            <li>Hola, <%= req.session.usuario.nombre %>!</li>
+            <li><a href="/user/logout">Cerrar sesión</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>
@@ -49,7 +51,7 @@
           </p>
           <p class="product_detail__subt">Precio: $1800</p>
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
           </div>
@@ -58,7 +60,7 @@
     </main>
     <footer class="footer1">
       <div class="footer__logo">
-        <a href="/index.html"
+        <a href="/"
           ><img
             src="/assets/logo_st.png"
             alt="logo_tebanilia"

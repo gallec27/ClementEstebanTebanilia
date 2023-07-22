@@ -13,13 +13,18 @@
   <body>
     <header class="header1">
       <div class="header__logo">
-        <a href="/index.html"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
         <h1 class="header1__titulo">tebanilia</h1>
       </div>
       <nav class="navBar">
-        <ul class="navBar__links">
-          <li><a href="/index.html">Inicio</a></li>          
-          <li><a href="/login.html">Ingresar</a></li>
+        <ul class="navBar__links">          
+          <% if (req.session.usuario) { %>            
+            <li>Hola, <%= req.session.usuario.nombre %>!</li>
+            <li><a href="/user/logout">Cerrar sesión</a></li>
+          <% } else { %>
+            <!-- <li><a href="/">Inicio</a></li> -->
+            <li><a href="/user/login">Ingresar</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>
@@ -69,10 +74,23 @@
           />
           <h2 class="card__titulo">Blend Sabor Medio</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <% if (req.session.usuario) { %>            
+              <a href="/products/cart"><button class="btn__carrito">
+                <img src="/assets/icon_cart.png" alt="carrito" />
+              </button></a>
+              <a href="/products/details"><button class="btn__vermas">Detalles</button></a>  
+            <% } else { %>
+              <a href="/user/login"><button class="btn__carrito">
+                <img src="/assets/icon_cart.png" alt="carrito" />
+              </button></a>
+              <a href="/user/login"><button class="btn__vermas">Detalles</button></a>
+            <% } %>
+
+
+            <!-- <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a> -->
           </div>
         </article>
         <article class="card">
@@ -84,10 +102,10 @@
           />
           <h2 class="card__titulo">Blend Sabor Intenso</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>            
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
         <article class="card">
@@ -99,10 +117,10 @@
           />
           <h2 class="card__titulo">Apulia</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
         <article class="card">
@@ -114,10 +132,10 @@
           />
           <h2 class="card__titulo">Aceto Balsámico</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
       </section>
@@ -131,10 +149,10 @@
           />
           <h2 class="card__titulo">Aceto Balsámico</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
         <article class="card">
@@ -146,10 +164,10 @@
           />
           <h2 class="card__titulo">Blend Sabor Intenso</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
         <article class="card">
@@ -161,10 +179,10 @@
           />
           <h2 class="card__titulo">Apulia</h2>          
           <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
         <article class="card">
@@ -175,18 +193,18 @@
             loading="lazy"
           />
           <h2 class="card__titulo">Apulia</h2>          
-          <div class="btn__container">
-            <a href="/cart.html"><button class="btn__carrito">
+          <div class="btn__container">/login.html
+            <a href="/products/cart"><button class="btn__carrito">
               <img src="/assets/icon_cart.png" alt="carrito" />
             </button></a>
-            <a href="/detalle.html"><button class="btn__vermas">Detalles</button></a>
+            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
           </div>
         </article>
       </section>      
     </main>
     <footer class="footer1">
       <div class="footer__logo">
-        <a href="/index.html"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
         <h3 class="footer__titulo">tebanilia</h3>
         <p class="footer__copyright">Copyrigth 2023</p>
       </div>      
