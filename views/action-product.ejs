@@ -31,22 +31,30 @@
     </header>
     <main class="main1">
       <section class="container">
-        <form method="post" action="/products/action" class="registro">
+        <form method="post" action="/products/action" class="registro" enctype="multipart/form-data">
           <div class="form-group">
-            <label for="id">Código</label>
-            <input name="id" id="id" type="text" class="id" value="<%= product.id %>" readonly/>
+            <label for="codigo">Código</label>
+            <input name="codigo" id="codigo" type="text" class="codigo" value="<%= product.codigo %>" readonly/>
           </div>
           <div class="form-group">
             <label for="nombre">Nombre</label>
             <input name="nombre" id="nombre" type="text" class="name" value="<%= product.nombre %>" required/>
           </div>
           <div class="form-group">
+            <label for="detalle">Detalle</label>
+            <input name="detalle" id="detalle" type="text" class="detalle" value="<%= product.detalle %>" required/>
+          </div>
+          <div class="form-group">
             <label for="precio">Precio</label>
             <input name="precio" id="precio" type="text" class="price" value="<%= product.precio %>" required/>
           </div>
           <div class="form-group">
-            <label for="descripcion">Detalles</label>
+            <label for="descripcion">Descripción</label>
             <textarea name="descripcion" id="descripcion" required><%= product.descripcion %></textarea>            
+          </div>
+          <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input name="imagen" id="imagen" type="file" required/>
           </div>
           <div class="form-group">
             <button type="submit" name="accion" value="guardar">Guardar</button>            
@@ -54,7 +62,7 @@
           <div class="form-group">            
             <button type="submit" name="accion" value="eliminar">Eliminar</button>
           </div>
-          <div class="form-group__h4">
+            <div class="form-group__h4">
             <a href="/admin/profile"><h4>Regresar</h4></a>
           </div>
           <div class="form-group__error">

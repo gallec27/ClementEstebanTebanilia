@@ -81,8 +81,8 @@
         <% productos.forEach(producto => { %>
         <article class="card">
           <img
-            src="/assets/saborMedio.png"
-            alt="aceite oliva extra virgen"
+            src="/uploads/products/<%= producto.imagen %>"
+            alt="<%= producto.nombre %>"
             class="img__producto"
             loading="lazy"
           />

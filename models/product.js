@@ -3,27 +3,31 @@ const sequelize = require('../config/sequelize-config');
 const Category = require('./category');
 
 const Product = sequelize.define('tb_products', {
+  codigo: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   nombre: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false
   },
   detalle: {
     type: DataTypes.STRING,
   },
   precio: {
     type: DataTypes.DOUBLE(8, 2),
-    allowNull: false,
+    allowNull: false
   },
   descripcion: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    allowNull: false
   },
   imagen: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false
   },
 }, {
-  timestamps: true, // Esto habilitará los campos createdAt y updatedAt
+  timestamps: true // Esto habilitará los campos createdAt y updatedAt
 });
 
 Product.belongsTo(Category, { foreignKey: 'id_cat' });

@@ -1,11 +1,9 @@
 const { body, validationResult } = require("express-validator");
 
 const validateProduct = [
-  body("id")
+  body("codigo")
     .notEmpty()
-    .withMessage("Debe ingresar el código.")
-    .isNumeric()
-    .withMessage("Debe ingresar un código numérico."),
+    .withMessage("Debe ingresar el código."),
   body("nombre").notEmpty().withMessage("Debe ingresar el nombre."),
   body("precio")
     .notEmpty()
