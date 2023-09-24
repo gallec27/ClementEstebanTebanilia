@@ -6,24 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tebanilia - Home</title>
     <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/layouts.css" />    
+    <link rel="stylesheet" href="/styles/layouts.css" />
     <link rel="stylesheet" href="/styles/cards.css" />
     <link rel="stylesheet" href="/styles/banner.css" />
   </head>
   <body>
     <header class="header1">
       <div class="header__logo">
-        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <a href="/"
+          ><img
+            src="/assets/logo_st.png"
+            alt="logo_tebanilia"
+            class="img__logo"
+        /></a>
         <h1 class="header1__titulo">tebanilia</h1>
       </div>
       <nav class="navBar">
-        <ul class="navBar__links">          
-          <% if (req.session.usuario) { %>            
-            <li>Hola, <%= req.session.usuario.nombre %>!</li>
-            <li><a href="/user/logout">Cerrar sesión</a></li>
+        <ul class="navBar__links">
+          <% if (req.session.usuario) { %>
+          <li>Hola, <%= req.session.usuario.nombre %>!</li>
+          <li><a href="/user/logout">Cerrar sesión</a></li>
           <% } else { %>
-            <!-- <li><a href="/">Inicio</a></li> -->
-            <li><a href="/user/login">Ingresar</a></li>
+          <li><a href="/user/login">Ingresar</a></li>
           <% } %>
         </ul>
       </nav>
@@ -32,39 +36,49 @@
       <div class="banner">
         <img
           src="/assets/oliva_olivo.png"
-          alt="imágen planta olivo" class="img__banner1l"
+          alt="imágen planta olivo"
+          class="img__banner1l"
         />
         <img
           src="/assets/oliva_cosecha.png"
-          alt="imágen cosecha aceitunas" class="img__banner2l"
+          alt="imágen cosecha aceitunas"
+          class="img__banner2l"
         />
         <img
           src="/assets/oliva_oliva.png"
-          alt="imágen aceite de oliva" class="img__banner3l"
+          alt="imágen aceite de oliva"
+          class="img__banner3l"
         />
         <img
           src="/assets/miel_abeja.png"
-          alt="imágen abeja sobre flor" class="img__banner4l"
+          alt="imágen abeja sobre flor"
+          class="img__banner4l"
         />
         <img
-          src="/assets/miel_miel.png" class="img__banner4r"
+          src="/assets/miel_miel.png"
+          class="img__banner4r"
           alt="imágen miel"
         />
         <img
-          src="/assets/vino_vid.png" class="img__banner3r"
+          src="/assets/vino_vid.png"
+          class="img__banner3r"
           alt="imágen viñedo"
         />
         <img
           src="/assets/vino_barricas.png"
-          alt="imágen barricas de madera" class="img__banner2r"
+          alt="imágen barricas de madera"
+          class="img__banner2r"
         />
         <img
           src="/assets/vino_copas.png"
-          alt="imágen copas con vino" class="img__banner1r"
+          alt="imágen copas con vino"
+          class="img__banner1r"
         />
       </div>
       <div><h2 class="productos__titulo">Sabores auténticos</h2></div>
       <section class="productos">
+        <!-- Iterar sobre la lista de productos -->
+        <% productos.forEach(producto => { %>
         <article class="card">
           <img
             src="/assets/saborMedio.png"
@@ -72,142 +86,44 @@
             class="img__producto"
             loading="lazy"
           />
-          <h2 class="card__titulo">Blend Sabor Medio</h2>          
+          <!-- Mostrar el nombre del producto -->
+          <h2 class="card__titulo"><%= producto.nombre %></h2>
           <div class="btn__container">
-            <% if (req.session.usuario) { %>            
-              <a href="/products/cart"><button class="btn__carrito">
+            <% if (req.session.usuario) { %>
+            <a href="/products/cart">
+              <button class="btn__carrito">
                 <img src="/assets/icon_cart.png" alt="carrito" />
-              </button></a>
-              <a href="/products/details"><button class="btn__vermas">Detalles</button></a>  
+              </button>
+            </a>
+            <a href="/products/details">
+              <button class="btn__vermas">Detalles</button>
+            </a>
             <% } else { %>
-              <a href="/user/login"><button class="btn__carrito">
+            <a href="/user/login">
+              <button class="btn__carrito">
                 <img src="/assets/icon_cart.png" alt="carrito" />
-              </button></a>
-              <a href="/user/login"><button class="btn__vermas">Detalles</button></a>
+              </button>
+            </a>
+            <a href="/user/login">
+              <button class="btn__vermas">Detalles</button>
+            </a>
             <% } %>
-
-
-            <!-- <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a> -->
           </div>
         </article>
-        <article class="card">
-          <img
-            src="/assets/saborIntenso.png"
-            alt="aceite oliva extra virgen"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Blend Sabor Intenso</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>            
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="/assets/apuliaBlanca.png"
-            alt="aceite oliva extra virgen"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Apulia</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="/assets/aceto.png"
-            alt="aceto balsámico"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Aceto Balsámico</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
+        <% }); %>
       </section>
-      <section class="productos">
-        <article class="card">
-          <img
-            src="/assets/aceto.png"
-            alt="aceto balsámico"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Aceto Balsámico</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="/assets/saborIntenso.png"
-            alt="aceite oliva extra virgen"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Blend Sabor Intenso</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="/assets/apuliaBlanca.png"
-            alt="aceite oliva extra virgen"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Apulia</h2>          
-          <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-        <article class="card">
-          <img
-            src="/assets/apuliaBlanca.png"
-            alt="aceite oliva extra virgen"
-            class="img__producto"
-            loading="lazy"
-          />
-          <h2 class="card__titulo">Apulia</h2>          
-          <div class="btn__container">/login.html
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
-            <a href="/products/details"><button class="btn__vermas">Detalles</button></a>
-          </div>
-        </article>
-      </section>      
     </main>
     <footer class="footer1">
       <div class="footer__logo">
-        <a href="/"><img src="/assets/logo_st.png" alt="logo_tebanilia" class="img__logo"/></a>
+        <a href="/"
+          ><img
+            src="/assets/logo_st.png"
+            alt="logo_tebanilia"
+            class="img__logo"
+        /></a>
         <h3 class="footer__titulo">tebanilia</h3>
         <p class="footer__copyright">Copyrigth 2023</p>
-      </div>      
+      </div>
     </footer>
   </body>
 </html>

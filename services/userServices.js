@@ -1,44 +1,39 @@
-const fs = require("fs");
-const path = require('path');
+const  User  = require('../models/user'); // Importa tu modelo de usuario
 
-function getPath(){
-  const filePath = path.join(__dirname, '..', 'data', 'users.json');
-  return filePath;
+// Función para guardar un nuevo usuario en la base de datos
+async function saveUser(nuevoUsuario) {
+  try {
+    const usuario = await User.create(nuevoUsuario);
+    return usuario;
+  } catch (error) {
+    throw error;
+  }
 }
 
-function saveUser(nuevoUsuario) {
-  const usuarios = readUsers();
-  usuarios.push(nuevoUsuario);
-  const stringifiedUsers = JSON.stringify(usuarios, null, 2);
-  //const result = fs.writeFileSync("../data/users.json", stringifiedUsers, "utf-8");
-  const result = fs.writeFileSync(getPath(), stringifiedUsers, "utf-8");
-  return result;
+// Función para buscar un usuario por su email
+async function findUser(emailLogin) {
+  try {
+    const usuario = await User.findOne({ where: { email: emailLogin } });
+       
+    return usuario;
+  } catch (error) {
+    throw error;
+  }
 }
 
-function readUsers() {
-  /*const usuariosParsed = JSON.parse(fs.readFileSync("../data/users.json", "utf-8"));
-  return usuariosParsed;*/
-  
-  const usuariosParsed = JSON.parse(fs.readFileSync(getPath(), 'utf-8'));
-  return usuariosParsed;
-}
-
-function findUser(emailLogin) {  
-  const usuarios = readUsers(); 
-  const usuarioEncontrado = usuarios.find((usuario) => usuario.email === emailLogin);
-  
-  return usuarioEncontrado;
-}
-
-function checkUser(emailLogin) {  
-  const usuarios = readUsers();  
-  const usuarioEncontrado = usuarios.some((usuario) => usuario.email === emailLogin);  
-  return usuarioEncontrado;
+// Función para verificar si un usuario existe por su email
+async function checkUser(emailLogin) {
+  try {
+    const usuario = await User.findOne({ where: { email: emailLogin } });
+    
+    return usuario !== null;
+  } catch (error) {
+    throw error;
+  }
 }
 
 module.exports = {
   saveUser,
-  readUsers,
   findUser,
-  checkUser
+  checkUser,
 };

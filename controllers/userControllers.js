@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const fs = require("fs");
+//const fs = require("fs");
 const { saveUser, findUser, checkUser } = require("../services/userServices");
 
 const renderLogin = (req, res) => {
@@ -10,12 +10,14 @@ const renderRegister = (req, res) => {
   res.render("register", { errors: [] });
 };
 
-const registerUser = (req, res) => {
+const registerUser = async (req, res) => {
   //Destructuring  
   const { nombre, apellido, fechaNac, email, password } = req.body;
 
-  // buscar en el array de usuarios el que coincida con el email, si ninguno coincide, enviar un error
-  if (!checkUser(email)) {
+  // buscar la tabla de usuarios el que coincida con el email, si ninguno coincide, enviar un error
+  const user = await checkUser(email);
+
+  if (!user) {
     // Generar un salt (valor aleatorio) para fortalecer el hashing
     const saltRounds = 10;
     // Aplicar el hashing de la contraseña utilizando bcrypt
@@ -47,12 +49,13 @@ const registerUser = (req, res) => {
   }
 };
 
-const login = (req, res) => {  
+const login = async (req, res) => {  
   const { email, password } = req.body;
 
   // buscar en el array de usuarios el que coincida con el email, si ninguno coincide, enviar un error
-  const usuarioOk = findUser(email);
-  if (usuarioOk) {
+  const usuarioOk = await findUser(email);
+  
+  if (usuarioOk !== null) {
     bcrypt.compare(password, usuarioOk.password, (error, result) => {
       if (error) {        
         return res.status(400).send("Error al comparar la contraseña.");

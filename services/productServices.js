@@ -1,53 +1,62 @@
-const fs = require("fs");
-const path = require("path");
+const  Product = require('../models/product'); // Importa tu modelo de producto
 
-function getPath() {
-  const filePath = path.join(__dirname, "..", "data", "products.json");
-  return filePath;
-}
-
-function saveProduct(nuevoProducto) {
-  const productos = readProducts();
-  productos.push(nuevoProducto);
-  const stringifiedProducts = JSON.stringify(productos, null, 2);
-  const result = fs.writeFileSync(getPath(), stringifiedProducts, "utf8");
-  return result;
-}
-
-function readProducts() {
-  const productsParsed = JSON.parse(fs.readFileSync(getPath(), "utf-8"));
-  return productsParsed;
-}
-
-function findProduct(id) {
-  const products = readProducts();  
-  const productFinded = products.find((pr) => pr.id === id);
-
-  return productFinded;
-}
-
-function deleteProduct(id) {
-  const products = readProducts();
-
-  // Encontrar el índice del producto con el ID proporcionado
-  const productIndex = products.findIndex((product) => product.id === id);
-
-  if (productIndex !== -1) {
-    products.splice(productIndex, 1);
-    fs.writeFileSync(getPath(), JSON.stringify(products, null, 2), "utf8");
+// Función para guardar un nuevo producto en la base de datos
+async function saveProduct(nuevoProducto) {
+  try {
+    const producto = await Product.create(nuevoProducto);
+    return producto;
+  } catch (error) {
+    throw error;
   }
 }
 
-function checkProduct(id) {
-  const products = readProducts();
-  const productFinded = products.some((pr) => pr.id === id);  
-  return productFinded;
+// Función para buscar un producto por su ID
+async function findProduct(id) {
+  try {
+    const producto = await Product.findByPk(id);
+    return producto;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Función para eliminar un producto por su ID
+async function deleteProduct(id) {
+  try {
+    const producto = await Product.findByPk(id);
+    if (producto) {
+      await producto.destroy();
+    }
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Función para verificar si un producto existe por su ID
+async function checkProduct(id) {
+  try {
+    const producto = await Product.findByPk(id);
+    return producto !== null;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Función para leer todos los productos de la base de datos
+async function readProducts() {
+  try {
+    console.log(Product);
+    const productos = await Product.findAll();
+    return productos;
+  } catch (error) {
+    throw error;
+  }
 }
 
 module.exports = {
   saveProduct,
-  readProducts,
   findProduct,
+  deleteProduct,
   checkProduct,
-  deleteProduct
+  readProducts
 };

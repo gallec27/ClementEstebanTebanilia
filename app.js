@@ -4,6 +4,16 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const PORT = 3000;
 
+const sequelize = require('./config/sequelize-config');
+/*const Product = require('./models/product');
+const Category = require('./models/category');
+const User = require('./models/user');*/
+
+// Sincronizar los modelos con la base de datos
+sequelize.sync({ force: false }).then(() => {
+  console.log('Base de datos conectada y modelos sincronizados.');
+});
+
 //middlewares
 app.set("view engine", "ejs");
 app.use(express.static("public")); //carpeta publica para archivos estaticos (css, js, img, etc)
