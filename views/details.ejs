@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/layouts.css" />
     <link rel="stylesheet" href="/styles/details.css" />
+    <link rel="stylesheet" href="/styles/cards.css" />
+    <link rel="stylesheet" href="/styles/banner.css" />
   </head>
   <body>
     <header class="header1">
@@ -22,9 +24,9 @@
       </div>
       <nav class="navBar">
         <ul class="navBar__links">
-          <% if (req.session.usuario) { %>            
-            <li>Hola, <%= req.session.usuario.nombre %>!</li>
-            <li><a href="/user/logout">Cerrar sesión</a></li>
+          <% if (req.session.usuario) { %>
+          <li>Hola, <%= req.session.usuario.nombre %>!</li>
+          <li><a href="/user/logout">Cerrar sesión</a></li>
           <% } %>
         </ul>
       </nav>
@@ -32,29 +34,43 @@
     <main class="main1">
       <section class="container">
         <article class="product_detail">
+          <% if (product) { %>
+          <!-- Verifica si hay datos del producto -->
           <img
-            src="/assets/saborMedio.png"
-            alt="aceite oliva extra virgen"
-            class="product_detial__img"
+            src="/uploads/products/<%= product.imagen %>"
+            alt="<%= product.nombre %>"
+            class="img__producto"
             loading="lazy"
           />
-          <h2 class="product_detail__titulo">Blend Sabor Medio</h2>
-          <p class="product_detail__subt">Bivarietal Arbequina Picual</p>
-          <p class="product_detail__res">
-            Es un aceite equilibrado y estable por su alto contenido en ácido
-            oleico y concentración de polifenoles. Se destaca como cualidad la
-            persistencia de su sabor, con un resultado en boca de ligero amargor
-            picante. De aromas delicados, con notas herbáceas, de banana y
-            frutos maduros. Muy apropiado para potenciar sabores preparados en
-            crudo, ensaladas y cualquier plato que requiera de un sabor intenso
-            con ciertos aromas frutados.
-          </p>
-          <p class="product_detail__subt">Precio: $1800</p>
+          <h2 class="product_detail__titulo"><%= product.nombre %></h2>
+          <p class="product_detail__subt"><%= product.detalle %></p>
+          <p class="product_detail__res"><%= product.descripcion %></p>
+          <p class="product_detail__subt">Precio: $<%= product.precio %></p>
           <div class="btn__container">
-            <a href="/products/cart"><button class="btn__carrito">
-              <img src="/assets/icon_cart.png" alt="carrito" />
-            </button></a>
+            <% if (req.session.usuario) { %> <% if
+            (req.session.usuario.nivelAcceso === 'admin') { %>
+            <!-- Si el usuario es administrador, muestra el botón "Editar" -->
+            <a href="/products/action/<%= product.codigo %>">
+              <button class="btn__editar">Editar</button>
+            </a>
+            <% } else if (req.session.usuario.nivelAcceso === 'client') { %>
+            <!-- Si el usuario es cliente, muestra el botón "Carrito" -->
+            <a href="/products/cart">
+              <button class="btn__carrito">
+                <img src="/assets/icon_cart.png" alt="carrito" />
+              </button>
+            </a>
+            <% } %> <% } else { %>
+            <a href="/user/login">
+              <button class="btn__carrito">
+                <img src="/assets/icon_cart.png" alt="carrito" />
+              </button>
+            </a>
+            <% } %>
           </div>
+          <% } else { %>
+          <p>No se encontraron detalles para este producto.</p>
+          <% } %>
         </article>
       </section>
     </main>

@@ -50,6 +50,16 @@
       padding: 8px;
       font-size: 14px;
       font-weight: bold;
+      width: 100px;
+    }
+
+    .btn__editar {
+      background-color: var(--btn-editar-color);
+      border-radius: 7px;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      width: 90px;
     }
   
   @media screen and (max-width: 768px) {

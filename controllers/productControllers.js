@@ -28,8 +28,16 @@ const renderCart = (req, res) => {
   res.render("cart", { req });
 };
 
-const renderDetails = (req, res) => {
-  res.render("details", { req });
+const renderDetails = async (req, res) => {
+  try {
+    const productCodigo = req.params.codigo;
+    const product = await findProduct(productCodigo);
+    res.render("details", { req, product, errors: [] });
+  } catch (error) {
+    console.error(error);
+    // Manejar el error apropiadamente
+    res.status(500).send("Error al cargar la página");
+  }
 };
 
 const renderCreate = (req, res) => {
@@ -84,10 +92,8 @@ const renderListProduct = async (req, res) => {
 };
 
 const renderActionProduct = async (req, res) => {
-  try {
-    console.log(req.params);
-    const productCodigo = req.params.codigo;
-    console.log("EL HIJO DE MIL PUTA QUE SE ENVIA Y NO LLEGA: " + productCodigo);
+  try {    
+    const productCodigo = req.params.codigo;    
     const product = await findProduct(productCodigo);    
     res.render("action-product", { req, product, errors: [] });
   } catch (error) {
@@ -98,23 +104,12 @@ const renderActionProduct = async (req, res) => {
 };
 
 const actionProduct = async (req, res) => {
-  const accion = req.body.accion; // Lee el valor del botón clickeado
-  //const productId = req.body.id; // Lee el valor del campo ID del producto
+  const accion = req.body.accion; // Lee el valor del botón clickeado  
   //Destructuring
   const { codigo, nombre, detalle, precio, descripcion } = req.body;
 
   if (accion === "guardar") {
-    // Verifica si se cargó una imagen
-    if (!req.file) {
-      return res.render("create-product", {
-        req,
-        errors: [{ msg: "Debes cargar una imagen." }],
-      });
-    }
-
-    console.log("ID DEL PRODUCTO A BORRAR: " + codigo)
-    if (await checkProduct(codigo)) {
-      console.log("ENCONTRO EL PRODUCTO CON ID: " + codigo);
+    if (await checkProduct(codigo)) {      
       await deleteProduct(codigo);
     }
 

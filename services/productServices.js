@@ -12,8 +12,7 @@ async function saveProduct(nuevoProducto) {
 
 // Función para buscar un producto por su ID
 async function findProduct(cod) {
-  try {
-    console.log("EL PUTO CODIGO QUE NO LLEGA: " + cod);
+  try {    
     const producto = await Product.findOne({
       where: { codigo: cod }
     });
@@ -26,9 +25,8 @@ async function findProduct(cod) {
 // Función para eliminar un producto por su CODIGO
 async function deleteProduct(cod) {
   try {
-    const producto = await Product.findOne({
-      where: { codigo: cod }
-    });
+    const producto =  await findProduct(cod);
+    
     if (producto) {
       await producto.destroy();
     }
@@ -40,9 +38,8 @@ async function deleteProduct(cod) {
 // Función para verificar si un producto existe por su CODIGO
 async function checkProduct(cod) {
   try {
-    const producto = await Product.findOne({
-      where: { codigo: cod }
-    });
+    const producto = await findProduct(cod);
+    
     return producto !== null;
   } catch (error) {
     throw error;

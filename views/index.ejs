@@ -89,16 +89,26 @@
           <!-- Mostrar el nombre del producto -->
           <h2 class="card__titulo"><%= producto.nombre %></h2>
           <div class="btn__container">
-            <% if (req.session.usuario) { %>
+            <% if (req.session.usuario) { %> <% if
+            (req.session.usuario.nivelAcceso === 'admin') { %>
+            <!-- Si el usuario es administrador, muestra el botón "Editar" -->
+            <a href="/products/action/<%= producto.codigo %>">
+              <button class="btn__editar">Editar</button>
+            </a>
+            <% } else if (req.session.usuario.nivelAcceso === 'client') { %>
+            <!-- Si el usuario es cliente, muestra el botón "Carrito" -->
             <a href="/products/cart">
               <button class="btn__carrito">
                 <img src="/assets/icon_cart.png" alt="carrito" />
               </button>
             </a>
-            <a href="/products/details">
+            <% } %>
+            <!-- Siempre muestra el botón "Detalles" -->
+            <a href="/products/details/<%= producto.codigo %>">
               <button class="btn__vermas">Detalles</button>
             </a>
             <% } else { %>
+            <!-- Si el usuario no está autenticado, muestra los botones para iniciar sesión -->
             <a href="/user/login">
               <button class="btn__carrito">
                 <img src="/assets/icon_cart.png" alt="carrito" />

@@ -12,6 +12,7 @@
   --tebanilia-text-color: #d1ffcce3;
   --btn-cart-color: #f4a259;
   --btn-detalle-color: #f4e285;
+  --btn-editar-color: #9b4747;
   --img-box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
     0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }

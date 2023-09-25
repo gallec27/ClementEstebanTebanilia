@@ -31,6 +31,5 @@ const Product = sequelize.define('tb_products', {
 });
 
 Product.belongsTo(Category, { foreignKey: 'id_cat' });
-console.log("Paso por acá");
 
 module.exports = Product;

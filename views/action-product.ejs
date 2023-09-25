@@ -53,8 +53,12 @@
             <textarea name="descripcion" id="descripcion" required><%= product.descripcion %></textarea>            
           </div>
           <div class="form-group">
-            <label for="imagen">Imagen</label>
-            <input name="imagen" id="imagen" type="file" required/>
+            <label for="imagen">Imagen Actual:</label>
+            <p><%= product.imagen %></p>
+          </div>
+          <div class="form-group">
+            <label for="imagen">Nueva Imagen</label>
+            <input name="imagen" id="imagen" type="file"/>
           </div>
           <div class="form-group">
             <button type="submit" name="accion" value="guardar">Guardar</button>            

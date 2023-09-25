@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get("/cart", productController.renderCart);
-router.get("/details", productController.renderDetails);
+router.get("/details/:codigo", productController.renderDetails);
 
 // Utiliza Multer como middleware en la ruta de creación de productos
 router.get("/create", productController.renderCreate);
